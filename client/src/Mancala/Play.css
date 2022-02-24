@@ -1,1 +1,102 @@
-/** Add some styles */
+body {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: larger;
+  --primary-color: rgb(68, 66, 66);
+}
+
+.game {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.board {
+  display: flex;
+  background-color: rgb(128, 128, 128);
+  flex-direction: row;
+  height: 40vh;
+  width: 90vw;
+  padding: 10px;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+
+.bowl {
+  font-weight: bold;
+  font-size: larger;
+  margin: 4px;
+  border-radius: 50%;
+  height: 90%;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.bowl:hover {
+  border-color: rgb(255, 255, 255);
+  color:rgb(65, 72, 78);
+}
+
+.kalaha {
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40%;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+#kalahap1 {
+  background-color: rgb(230, 138, 102);
+}
+
+#kalahap2 {
+  background-color: rgb(77, 172, 136);
+}
+
+.row-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.topboard {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+#bowlsp2 {
+  background-color: rgb(166, 247, 202);
+}
+
+#bowlsp1 {
+  background-color: rgb(255, 194, 169);
+}
+
+.bottomboard {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+.gamestatus {
+  width: 100%;
+  background-color: rgb(83, 162, 182);
+  font-size: larger;
+  text-align: center;
+  color: bisque;
+  margin: 8px;
+  background: rgb(65, 72, 78);
+}

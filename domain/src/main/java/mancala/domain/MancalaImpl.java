@@ -1,34 +1,62 @@
 package mancala.domain;
 
 public class MancalaImpl implements Mancala {
+
+    private final BoardGame game;
+    private final Player player1;
+    private final Player player2;
+    
     public MancalaImpl() {
-        // Initialize the game here.
+        this.player1 = new Player(new Kalaha());
+        this.player2 = new Player(new Kalaha());
+        this.game = new BoardGame(player1, player2);
     }
 
     @Override
     public boolean isPlayersTurn(int player) {
-        return true;
+        Player p = (player == 1) ? player1 : player2;    
+        return p.equals(game.getCurrentPlayer()); 
     }
 
     @Override
 	public void playPit(int index) throws MancalaException {
-        // Implement playing a pit.
+        game.makeMove(index);
     }
 	
 	@Override
 	public int getStonesForPit(int index) {
-        // Make a sane implementation.
-        if((index + 1) % 7 == 0) return 0;
-        return 4;
+        int player = index/7;
+        int idx = index % 7;
+        Player p = (player == 0) ? player1 : player2;
+
+        if (idx == 6) {
+            return p.getScore();
+        } else {
+            return p.getBowls().get(idx).getNumberOfStones();
+        }
     }
 
 	@Override
 	public boolean isEndOfGame() {
-        return false;
+        return game.hasEnded();
     }
 
 	@Override
 	public int getWinner() {
-        return Mancala.NO_PLAYERS;
+        if(!isEndOfGame()) {
+            return 0;
+        }
+
+        Player p = game.getWinner();
+
+        if (p == null) {
+            return 3;
+        }
+
+        if (p.equals(game.getPlayer1())) {
+            return 1;
+        } else {
+            return 2;
+        }
     }
 }
