@@ -13,8 +13,8 @@ export function Header() {
             Mancala
         </div>
         <div className="main-navigation">
-            <Link to="/">Play</Link>
-            <Link to="/about">About</Link>
+            <Link id="playnavigation" to="/">Play</Link>
+            <Link id="aboutnavigation" to="/about">About</Link>
         </div>
     </header>
 }
