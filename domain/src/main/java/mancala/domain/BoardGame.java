@@ -52,8 +52,13 @@ public class BoardGame {
     public void makeMove(int bowlNumber) {
         AllCups last = getCurrentPlayer().makeMove(bowlNumber, getOpponent().getBowls());
 
-        if (!(last instanceof Kalaha)) {
+        if (last != null && !(last instanceof Kalaha)) {
             currentPlayer = getOpponent();
+        }
+
+        if (hasEnded()) {
+            player1.moveAllPlayerStonesToKalaha();
+            player2.moveAllPlayerStonesToKalaha();
         }
     }
 

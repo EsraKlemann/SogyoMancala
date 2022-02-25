@@ -20,7 +20,9 @@ public class MancalaImpl implements Mancala {
 
     @Override
 	public void playPit(int index) throws MancalaException {
-        game.makeMove(index);
+        int nulTmZes = index % 7;
+        int mijnIndex = nulTmZes + 1;
+        game.makeMove(mijnIndex);
     }
 	
 	@Override

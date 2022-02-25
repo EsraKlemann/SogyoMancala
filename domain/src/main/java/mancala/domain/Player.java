@@ -23,6 +23,18 @@ public class Player {
         return numberOfStonesBowls;
     }
 
+
+
+    public void moveAllPlayerStonesToKalaha() {
+        int playerStones = getNumberOfStonesPlayer();
+
+        for (Bowl bowl : bowls) {
+            bowl.takeAllStones();
+        }
+
+        kalaha.giveStones(playerStones);
+    }
+
     public int getScore() {
         return kalaha.getNumberOfStones();
     }

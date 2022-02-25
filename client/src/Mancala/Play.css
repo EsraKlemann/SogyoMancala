@@ -2,7 +2,7 @@ body {
   font-family: Helvetica;
   font-weight: bold;
   font-size: larger;
-  --primary-color: rgb(68, 66, 66);
+  --primary-color: rgb(143, 138, 138);
 }
 
 .game {
@@ -17,7 +17,7 @@ body {
 
 .board {
   display: flex;
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(206, 206, 206);
   flex-direction: row;
   height: 40vh;
   width: 90vw;
@@ -39,7 +39,7 @@ body {
 
 .bowl:hover {
   border-color: rgb(255, 255, 255);
-  color:rgb(65, 72, 78);
+  color:rgb(105, 107, 109);
 }
 
 .kalaha {

@@ -40,14 +40,20 @@ export function Play({ gameState, setGameState }: PlayProps) {
   const player1Kalaha = player1.pits[6];
   const player2Kalaha = player2.pits[6];
 
+  let winner = "";
+  if (gameState.gameStatus.endOfGame) {
+    winner = "Winnaar: " + gameState.gameStatus.winner;
+  }
   return (
         <div className="game">
             <p>{player1.name}       vs      {player2.name}</p>
+            <p>End of Game: {gameState.gameStatus.endOfGame ? "ja" : "nee"}</p>
+            <p>{winner}</p>
             <div className="board">
                 <div className="kalaha" id="kalahap2">{player2Kalaha.nrOfStones}</div>
                 <div className="row-wrapper">
                   <div className="topboard">
-                    {player1.pits.slice(0,-1).reverse().map(pit =>
+                    {player2.pits.slice(0,-1).reverse().map(pit =>
                         <button className="bowl" id="bowlsp2" onClick={()=> { if(player2.hasTurn)tryMakeMove(pit.index)}}>{pit.nrOfStones}</button>
                     )}
                   </div>
