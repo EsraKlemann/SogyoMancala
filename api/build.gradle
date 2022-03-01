@@ -3,6 +3,8 @@ plugins {
     id 'java'
     // This time we're building a command-line executable application.
     id 'application'
+    
+    id 'jacoco'
 }
 
 repositories {
@@ -47,4 +49,23 @@ application {
 test {
     // Use junit platform for unit tests
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.6
+            }
+        }
+    }
+}
+
+plugins {
+    id 'checkstyle'
 }
