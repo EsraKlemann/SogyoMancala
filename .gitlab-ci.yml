@@ -1,5 +1,5 @@
 
-image: docker pull gradle
+image: gradle:latest
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
