@@ -8,9 +8,8 @@ public class MancalaImplTest {
 
     @Test
     public void testHasToFail() {
-        int fouteInt = 5;
+        int fouteInt = 1;
         assertEquals(1, fouteInt);
     }
 
-    
 }
