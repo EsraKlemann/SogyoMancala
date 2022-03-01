@@ -65,7 +65,3 @@ jacocoTestCoverageVerification {
         }
     }
 }
-
-plugins {
-    id 'checkstyle'
-}
