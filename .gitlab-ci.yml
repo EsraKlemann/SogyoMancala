@@ -32,6 +32,6 @@ test:
       - gradle jacocoReport
       - gradle jacocoTestCoverageVerification --info
       - cat $CI_PROJECT_DIR/build/testcoverage-file-v1.txt
-      - gradle checkstyleMain
+      - gradle checkstyleMain --info
 
   
