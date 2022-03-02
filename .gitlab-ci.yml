@@ -11,25 +11,18 @@ stages:
     - build
     - test
 
-build:
-  stage: build
-  script: gradle --build-cache assemble
-  cache:
-    key: "$CI_COMMIT_REF_NAME"
-    policy: push
-    paths:
-      - build
-      - .gradle
 
-test:
+build-job:
+  stage: build
+  script: 
+    - ./gradlew assemble
+
+
+
+test-job:
   stage: test
   script:
       - echo "running unit tests..."
       - gradle test
       - gradle jacocoTestCoverageVerification --info
-  cache:
-    key: "$CI_COMMIT_REF_NAME"
-    policy: pull
-    paths:
-      - build
-      - .gradle
+  
