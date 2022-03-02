@@ -12,23 +12,26 @@ stages:
     - test
 
 
-build-job:
+build:
   stage: build
   script: 
     - ./gradlew assemble
     - mkdir build/
-    - echo "My application test file" > build/testcoverage-file-v1
+    - echo "My application test file" > build/testcoverage-file-v1.txt
   artifacts: 
     paths:
-      - build/testcoverage-file-v1
+      - build/testcoverage-file-v1.txt
 
 
 
-test-job:
+test:
   stage: test
   script:
       - echo "running unit tests..."
       - gradle test
+      - gradle jacocoReport
       - gradle jacocoTestCoverageVerification --info
-      - cat $CI_PROJECT_DIR/build/testcoverage-file-v1
+      - cat $CI_PROJECT_DIR/build/testcoverage-file-v1.txt
+      - gradle checkstyleMain
+
   
