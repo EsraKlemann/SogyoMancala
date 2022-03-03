@@ -23,7 +23,6 @@ test:
       - echo "running unit tests..."
       - gradle test
       - gradle jacocoTestCoverageVerification --info
-      - cat $CI_PROJECT_DIR/build/testcoverage-file-v1.txt
   artifacts:
     paths:
       - $CI_PROJECT_DIR/api/build/reports/*
