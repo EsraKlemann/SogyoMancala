@@ -2,8 +2,8 @@ package mancala.domain;
 
 public class BoardGame {
 
-    final private Player player1;
-    final private Player player2;
+    private final Player player1;
+    private final Player player2;
     private Player currentPlayer;
 
     public BoardGame(Player player1, Player player2) {
@@ -29,7 +29,7 @@ public class BoardGame {
     }
 
     public Player getWinner() {
-        if(!hasEnded()) {
+        if (!hasEnded()) {
             return null;
         }
         if (player1.getScore() > player2.getScore()) {
@@ -43,9 +43,8 @@ public class BoardGame {
     private Player getOpponent() {
         if (getCurrentPlayer() == player1) {
             return player2;
-        }
-        else {
-            return  player1;
+        } else {
+            return player1;
         }
     }
 
@@ -61,6 +60,5 @@ public class BoardGame {
             player2.moveAllPlayerStonesToKalaha();
         }
     }
-
 
 }

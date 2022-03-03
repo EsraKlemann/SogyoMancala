@@ -9,7 +9,7 @@ public class Player {
     private Kalaha kalaha;
     private List<Bowl> bowls;
 
-    public Player (Kalaha kalaha) {
+    public Player(Kalaha kalaha) {
         this.kalaha = kalaha;
         bowls = Arrays.asList(new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl());
     }
@@ -19,11 +19,9 @@ public class Player {
     }
 
     public int getNumberOfStonesPlayer() {
-        int numberOfStonesBowls = getBowls().stream().mapToInt(bowl-> bowl.getNumberOfStones()).sum();
+        int numberOfStonesBowls = getBowls().stream().mapToInt(bowl -> bowl.getNumberOfStones()).sum();
         return numberOfStonesBowls;
     }
-
-
 
     public void moveAllPlayerStonesToKalaha() {
         int playerStones = getNumberOfStonesPlayer();
@@ -48,7 +46,6 @@ public class Player {
         return numOfStones;
     }
 
-
     public AllCups makeMove(int bowlNumber, List<Bowl> opponentBowls) {
         List<AllCups> allBowls = new ArrayList<>(getBowls());
         allBowls.add(kalaha);
@@ -67,8 +64,14 @@ public class Player {
             return last;
         }
 
-        Bowl lastBowl = (Bowl)last;
+        Bowl lastBowl = (Bowl) last;
 
+        stealStones(lastBowl, opponentBowls);
+
+        return last;
+    }
+
+    public void stealStones(Bowl lastBowl, List<Bowl> opponentBowls) {
         if (getBowls().contains(lastBowl) && lastBowl.getNumberOfStones() == 1) {
             lastBowl.takeAllStones();
             kalaha.giveStone();
@@ -78,7 +81,6 @@ public class Player {
             }
             opponentsBowl.takeAllStones();
         }
-
-        return last;
     }
+
 }

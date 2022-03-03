@@ -13,7 +13,7 @@ public class Kalaha implements AllCups {
     }
 
     public void giveStone() {
-        numStones ++;
+        numStones++;
     }
 
     public void giveStones(int stones) {

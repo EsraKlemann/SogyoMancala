@@ -1,10 +1,8 @@
 package mancala.domain;
 
-
-public class Bowl implements AllCups{
+public class Bowl implements AllCups {
 
     private int numStones;
-
 
     public Bowl() {
         this.numStones = 4;
@@ -19,8 +17,7 @@ public class Bowl implements AllCups{
     }
 
     public void giveStone() {
-        numStones ++;
+        numStones++;
     }
-
 
 }
