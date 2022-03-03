@@ -1,18 +1,20 @@
 package mancala.api.models;
 
 public class PitDTO {
-	int index;
+    int index;
 
-	public int getIndex() {
-		return index;
-	}
+    public int getIndex() {
+        return index;
+    }
 
-	int nrOfStones;
+    int nrOfStones;
 
-	public int getNrOfStones() { return nrOfStones; }
+    public int getNrOfStones() {
+        return nrOfStones;
+    }
 
-	public PitDTO(int index, int nrOfStones) {
-		this.index = index;
-		this.nrOfStones = nrOfStones;
-	}
+    public PitDTO(int index, int nrOfStones) {
+        this.index = index;
+        this.nrOfStones = nrOfStones;
+    }
 }

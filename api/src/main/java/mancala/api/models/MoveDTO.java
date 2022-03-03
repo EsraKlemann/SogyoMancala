@@ -1,7 +1,7 @@
 package mancala.api.models;
 
 public class MoveDTO {
-    
+
     int index;
 
     public void setIndex(int index) {

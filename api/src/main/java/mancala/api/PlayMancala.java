@@ -23,7 +23,7 @@ public class PlayMancala {
     public Response initialize(
             @Context HttpServletRequest request,
             MoveDTO move) {
-        
+
         var index = move.getIndex();
 
         var session = request.getSession(false);
