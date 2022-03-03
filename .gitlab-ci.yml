@@ -10,6 +10,7 @@ before_script:
 stages:
     - build
     - test
+    - checkstyle
 
 
 build:
@@ -29,9 +30,16 @@ test:
   script:
       - echo "running unit tests..."
       - gradle test
-      - gradle jacocoReport
       - gradle jacocoTestCoverageVerification --info
       - cat $CI_PROJECT_DIR/build/testcoverage-file-v1.txt
-      - gradle checkstyleMain --info
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/api/build/reports/*
+      - $CI_PROJECT_DIR/domain/build/reports/*
+   
 
   
+checkstyle: 
+  stage: checkstyle
+  script:
+    - gradle check
