@@ -12,18 +12,10 @@ stages:
     - test
     - checkstyle
 
-
 build:
   stage: build
   script: 
     - ./gradlew assemble
-    - mkdir build/
-    - echo "My application test file" > build/testcoverage-file-v1.txt
-  artifacts: 
-    paths:
-      - build/testcoverage-file-v1.txt
-
-
 
 test:
   stage: test
@@ -31,15 +23,16 @@ test:
       - echo "running unit tests..."
       - gradle test
       - gradle jacocoTestCoverageVerification --info
-      - cat $CI_PROJECT_DIR/build/testcoverage-file-v1.txt
   artifacts:
     paths:
       - $CI_PROJECT_DIR/api/build/reports/*
       - $CI_PROJECT_DIR/domain/build/reports/*
    
-
-  
 checkstyle: 
   stage: checkstyle
   script:
     - gradle check
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/config/checkstyle/checkstyle.xml
+      
