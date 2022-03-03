@@ -2,9 +2,9 @@
 
 <!DOCTYPE suppressions PUBLIC
         "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
-        "https://checkstyle.org/dtds/suppresion1_2_.dtd">
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
 
-<suppresions>
+<suppressions>
     <suppress checks="JavadocType" files=".*Test\.java"/>
     <suppress checks="MissingJavadocMethodCheck" files=".*Test\.java"/>
-</suppresions>
+</suppressions>
