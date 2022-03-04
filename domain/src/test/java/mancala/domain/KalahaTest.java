@@ -15,7 +15,7 @@ public class KalahaTest {
     public void giveStoneIncreasesNumStonesInBowlByOne() {
         Kalaha kalaha = new Kalaha();
         kalaha.giveStone();
-        assertEquals(1,kalaha.getNumberOfStones());
+        assertEquals(1, kalaha.getNumberOfStones());
     }
 
 }

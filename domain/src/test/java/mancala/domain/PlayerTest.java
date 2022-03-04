@@ -18,28 +18,29 @@ public class PlayerTest {
     @Test
     public void aPlayerHas24StonesWhenTheyHave6Bowls() {
         Player player = new Player(new Kalaha());
-        List <Bowl> bowls = player.getBowls();
+        List<Bowl> bowls = player.getBowls();
         int numberOfStonesPlayer = player.getNumberOfStonesPlayer();
         assertEquals(24, numberOfStonesPlayer);
     }
 
     @Test
-    public void takingStonesFromAPlayersBowlLeavesThemWith20TotalStonesAnd0StonesInBowl () {
+    public void takingStonesFromAPlayersBowlLeavesThemWith20TotalStonesAnd0StonesInBowl() {
         Player player = new Player(new Kalaha());
-        List <Bowl> bowls = player.getBowls();
+        List<Bowl> bowls = player.getBowls();
         Bowl bowl = player.getBowls().get(0);
         bowl.takeAllStones();
         int numberOfStonesPlayer = player.getNumberOfStonesPlayer();
         int numberOfStonesBowl = player.getBowls().get(0).getNumberOfStones();
         assertEquals(20, numberOfStonesPlayer);
-        assertEquals(0,numberOfStonesBowl);
+        assertEquals(0, numberOfStonesBowl);
     }
 
     @Test
     public void getScoreIsEqualToNumberOfStonesInPlayersKalaha() {
         Kalaha kalaha = new Kalaha();
         Player player = new Player(kalaha);
-        for (int i = 0; i < 15; i++) kalaha.giveStone();
+        for (int i = 0; i < 15; i++)
+            kalaha.giveStone();
         assertEquals(kalaha.getNumberOfStones(), player.getScore());
     }
 
@@ -50,7 +51,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void ifEveryBowlIsEmptyThenPlayerHasNoStonesLeft(){
+    public void ifEveryBowlIsEmptyThenPlayerHasNoStonesLeft() {
         Player player = new Player(new Kalaha());
         player.getBowls().forEach(bowl -> bowl.takeAllStones());
         assertFalse(player.hasStonesLeft());
@@ -65,7 +66,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void whenPlayerMakesMoveTheNextBowlIsGivenAStone(){
+    public void whenPlayerMakesMoveTheNextBowlIsGivenAStone() {
         Player player = new Player(new Kalaha());
         player.makeMove(1, new ArrayList<>());
         int nextBowlNumberOfStones = player.getBowls().get(1).getNumberOfStones();
@@ -103,7 +104,8 @@ public class PlayerTest {
         for (int i = 0; i < 12; i++) {
             player.getBowls().get(0).giveStone();
         }
-        List<Bowl> opponentBowls = Arrays.asList(new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl());
+        List<Bowl> opponentBowls = Arrays.asList(new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl(),
+                new Bowl());
 
         player.makeMove(1, opponentBowls);
 
@@ -122,20 +124,19 @@ public class PlayerTest {
         assertEquals(5, opponentBowls.get(5).getNumberOfStones());
     }
 
-
     @Test
-    public void stealingOpponentStonesWhenPlayersLastStoneEndsInEmptyBowlOfPlayer () {
+    public void stealingOpponentStonesWhenPlayersLastStoneEndsInEmptyBowlOfPlayer() {
         Player player = new Player(new Kalaha());
         player.getBowls().get(5).takeAllStones();
-        List<Bowl> opponentBowls = Arrays.asList(new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl());
+        List<Bowl> opponentBowls = Arrays.asList(new Bowl(), new Bowl(), new Bowl(), new Bowl(), new Bowl(),
+                new Bowl());
         player.makeMove(2, opponentBowls);
         assertEquals(0, opponentBowls.get(0).getNumberOfStones());
         assertEquals(5, player.getScore());
     }
 
-
     @Test
-    public void turnDoesNotSwitchWhenLastStoneEndsInKalaha () {
+    public void turnDoesNotSwitchWhenLastStoneEndsInKalaha() {
         Player player1 = new Player(new Kalaha());
         Player player2 = new Player(new Kalaha());
         BoardGame game = new BoardGame(player1, player2);
@@ -151,7 +152,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void turnSwitchesWhenLastStoneDoesNotEndInKalaha () {
+    public void turnSwitchesWhenLastStoneDoesNotEndInKalaha() {
         Player player1 = new Player(new Kalaha());
         Player player2 = new Player(new Kalaha());
         BoardGame game = new BoardGame(player1, player2);
@@ -165,7 +166,5 @@ public class PlayerTest {
         assertEquals(0, player1.getScore());
         assertEquals(player2, game.getCurrentPlayer());
     }
-
-    
 
 }

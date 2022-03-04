@@ -1,14 +1,12 @@
 package mancala.domain;
 
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class BoardGameTest {
 
     @Test
-    public void  boardGameSetsUpTwoPlayers() {
+    public void boardGameSetsUpTwoPlayers() {
         Player p1 = new Player(new Kalaha());
         Player player2 = new Player(new Kalaha());
         BoardGame game = new BoardGame(p1, player2);
@@ -29,7 +27,7 @@ public class BoardGameTest {
     }
 
     @Test
-    public void gameHasNotEndedAtStart () {
+    public void gameHasNotEndedAtStart() {
         Player player1 = new Player(new Kalaha());
         Player player2 = new Player(new Kalaha());
         BoardGame game = new BoardGame(player1, player2);
@@ -98,7 +96,5 @@ public class BoardGameTest {
         currentPlayer.getBowls().forEach(bowl -> bowl.takeAllStones());
         assertNull(game.getWinner());
     }
-
-    
 
 }

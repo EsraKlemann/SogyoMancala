@@ -22,10 +22,7 @@ public class BowlTest {
     public void giveStoneIncreasesNumStonesInBowlByOne() {
         Bowl bowl = new Bowl();
         bowl.giveStone();
-        assertEquals(5,bowl.getNumberOfStones());
+        assertEquals(5, bowl.getNumberOfStones());
     }
-
-
-
 
 }
