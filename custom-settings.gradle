@@ -1,0 +1,10 @@
+rootProject.name = 'mancala'
+include('api', 'domain')
+
+gradle.projectsLoaded {
+    rootProject.allProjects {
+        afterEvaluate {
+            version = 'x.y.z'
+        }
+    }
+}
