@@ -27,7 +27,7 @@ test {
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
      reports {
-        xml.enabled = true 
+        xml.enabled = true
         csv.enabled = true
         html.enabled = true
     }
@@ -47,6 +47,7 @@ jacocoTestCoverageVerification {
 checkstyle {
     configFile file("../config/checkstyle/checkstyle.xml")
     configProperties.checkstyleSuppressionPath = file("../config/checkstyle/suppressions.xml").absolutePath
+    maxErrors = 15
 }
 
 checkstyleMain {
