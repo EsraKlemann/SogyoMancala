@@ -33,6 +33,8 @@ checkstyle:
   script:
     - gradle check
   artifacts:
+    when: always
     paths:
-      - $CI_PROJECT_DIR/config/checkstyle/checkstyle.xml
+      - $CI_PROJECT_DIR/api/build/reports/*
+      - $CI_PROJECT_DIR/domain/build/reports/*
       
