@@ -2,7 +2,7 @@ package mancala.api.models;
 
 public class MoveDTO {
 
-    int index;
+    private int index;
 
     public void setIndex(int index) {
         this.index = index;

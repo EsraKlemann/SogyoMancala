@@ -5,6 +5,9 @@ package mancala.api.models;
 // data your web API sends back to the client. The Java
 // objects will be converted to JSON objects.
 public class MancalaDTO {
+    private final PlayerDTO[] players;
+    private final GameStatusDTO gameStatus;
+
     public MancalaDTO(mancala.domain.Mancala mancala,
             String namePlayer1, String namePlayer2) {
         players = new PlayerDTO[2];
@@ -13,13 +16,9 @@ public class MancalaDTO {
         gameStatus = new GameStatusDTO(mancala, namePlayer1, namePlayer2);
     }
 
-    PlayerDTO[] players;
-
     public PlayerDTO[] getPlayers() {
         return players;
     }
-
-    GameStatusDTO gameStatus;
 
     public GameStatusDTO getGameStatus() {
         return gameStatus;

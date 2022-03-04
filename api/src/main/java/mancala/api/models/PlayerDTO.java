@@ -1,6 +1,11 @@
 package mancala.api.models;
 
 public class PlayerDTO {
+    private final String name;
+    private final String type;
+    private final boolean hasTurn;
+    private final PitDTO[] pits;
+
     public PlayerDTO(mancala.domain.Mancala mancala,
             String name, boolean isFirstPlayer) {
         this.name = name;
@@ -13,25 +18,17 @@ public class PlayerDTO {
         }
     }
 
-    String name;
-
     public String getName() {
         return name;
     }
-
-    String type;
 
     public String getType() {
         return type;
     }
 
-    boolean hasTurn;
-
     public boolean getHasTurn() {
         return hasTurn;
     }
-
-    PitDTO[] pits;
 
     public PitDTO[] getPits() {
         return pits;
