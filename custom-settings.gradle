@@ -2,7 +2,7 @@ rootProject.name = 'mancala'
 include('api', 'domain')
 
 gradle.projectsLoaded {
-    rootProject.allProjects {
+    rootProject.allprojects {
         afterEvaluate {
             version = 'x.y.z'
         }
