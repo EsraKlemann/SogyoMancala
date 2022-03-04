@@ -23,6 +23,8 @@ test:
       - echo "running unit tests..."
       - gradle test
       - gradle jacocoTestCoverageVerification --info
+      - cat $CI_PROJECT_DIR/domain/build/reports/jacoco/test/html/index.html | grep -o 'Total[^%]*%'
+  coverage: '/Total.*?([0-9]{1,3})%/'
   artifacts:
     paths:
       - $CI_PROJECT_DIR/api/build/reports/*
