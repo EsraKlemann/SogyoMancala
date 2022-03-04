@@ -1,16 +1,15 @@
 package mancala.api;
 
-import java.io.IOException;
-
-import org.eclipse.jetty.util.Index;
-
-import jakarta.servlet.http.*;
-import jakarta.servlet.ServletException;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.*;
-
-import mancala.api.models.*;
-import mancala.domain.Mancala;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import mancala.api.models.MancalaDTO;
+import mancala.api.models.MoveDTO;
 import mancala.domain.MancalaException;
 import mancala.domain.MancalaImpl;
 

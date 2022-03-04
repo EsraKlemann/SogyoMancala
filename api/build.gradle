@@ -28,7 +28,7 @@ dependencies {
     // We want to have some logging output if things go wrong, so use the simple console logger from SLF4J.
     // In our simple use case, the logger gets automatically configured by simply existing.
     implementation 'org.slf4j:slf4j-simple:+'
-    
+
     // Reference the domain subproject.
     implementation project(':domain')
 
@@ -55,7 +55,7 @@ test {
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
     reports {
-        xml.enabled = true 
+        xml.enabled = true
         csv.enabled = true
         html.enabled = true
     }
@@ -74,6 +74,7 @@ jacocoTestCoverageVerification {
 checkstyle {
     configFile file("../config/checkstyle/checkstyle.xml")
     configProperties.checkstyleSuppressionPath = file("../config/checkstyle/suppressions.xml").absolutePath
+    maxErrors = 60
 }
 
 checkstyleMain {
