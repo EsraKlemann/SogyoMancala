@@ -55,10 +55,7 @@ public class Player {
         selectedBowl.takeAllStones();
         AllCups last = null;
 
-        for (int i = bowlNumber; i < bowlNumber + numberOfStones; i++) {
-            last = allBowls.get(i % allBowls.size());
-            last.giveStone();
-        }
+        giveNextBowlsStones(bowlNumber, numberOfStones, allBowls);
 
         if (last instanceof Kalaha) {
             return last;
@@ -69,6 +66,13 @@ public class Player {
         stealStones(lastBowl, opponentBowls);
 
         return last;
+    }
+
+    public void giveNextBowlsStones(int bowlNumber, int numberOfStones, List<AllCups> allBowls) {
+        for (int i = bowlNumber; i < bowlNumber + numberOfStones; i++) {
+            AllCups last = allBowls.get(i % allBowls.size());
+            last.giveStone();
+        }
     }
 
     public void stealStones(Bowl lastBowl, List<Bowl> opponentBowls) {
