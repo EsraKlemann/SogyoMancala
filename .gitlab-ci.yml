@@ -23,7 +23,7 @@ test:
       - echo "running unit tests..."
       - gradle test
       - gradle jacocoTestCoverageVerification --info
-      - cat build/reports/jacoco/test/html/index.html | grep -o 'Total[^%]*%'
+      - cat $CI_PROJECT_DIR/domain/build/reports/jacoco/test/html/index.html | grep -o 'Total[^%]*%'
   artifacts:
     paths:
       - $CI_PROJECT_DIR/api/build/reports/*
