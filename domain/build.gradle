@@ -5,6 +5,7 @@ plugins {
     id 'jacoco'
     id 'checkstyle'
     id 'distribution'
+    id 'jacoco-report-aggregation'
 }
 
 repositories {
