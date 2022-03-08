@@ -47,5 +47,8 @@ deploy:
   stage: deploy
   script: 
     - gradle distZip
+  artifacts:
+    paths:
+    - $CI_PROJECT_DIR/api/build/distributions/*
 
 
