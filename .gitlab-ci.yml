@@ -11,7 +11,7 @@ stages:
     - build
     - test
     - checkstyle
-    - build
+    - deploy
 
 build:
   stage: build
@@ -43,7 +43,9 @@ checkstyle:
       - $CI_PROJECT_DIR/domain/build/reports/*
 
 
-build:
-  stage: build
+deploy:
+  stage: deploy
   script: 
     - gradle distZip
+
+
