@@ -1,0 +1,13 @@
+
+plugins {
+    id 'java'
+    id 'jacoco-report-aggregation'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    jacocoAggregation subprojects
+}
