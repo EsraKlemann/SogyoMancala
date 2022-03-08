@@ -1,10 +1,14 @@
+[![pipeline status](https://git.sogyo.nl/eklemann/mancala-java-esra/badges/mvc-esra/pipeline.svg)](https://git.sogyo.nl/eklemann/mancala-java-esra/-/commits/mvc-esra)
+[![coverage report](https://git.sogyo.nl/eklemann/mancala-java-esra/badges/mvc-esra/coverage.svg)](https://git.sogyo.nl/eklemann/mancala-java-esra/-/commits/mvc-esra)
+[![Latest Release](https://git.sogyo.nl/eklemann/mancala-java-esra/-/badges/release.svg)](https://git.sogyo.nl/eklemann/mancala-java-esra/-/releases)
+
 # Mancala
 
 This repository contains the files for three modules:
+
 - Object orientated programming: make your own implementation of the mancala game.
 - Model view controller: build a website for your own mancala game (or use the sloppy default implementation).
 - CI/CD: run your tests automatically when pushing code to Gitlab.
-
 
 ## Repository structure
 
@@ -22,7 +26,6 @@ The project consists of two servers. The front-end uses a Node.js server. It is 
 The front-end assumes that the back-end will run on port 8080. If that is not the case, edit the snowpack.config.js file.
 
 To run the application you need to have both servers running at the same time. This probably means you'll need to open two different terminals/command prompts to do so.
-
 
 ## React project structure
 
@@ -61,8 +64,6 @@ npm run start
 # Check code for common mistakes and style conventions
 npm run lint
 ```
-
-
 
 ## Java project structure
 
