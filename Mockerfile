@@ -1,0 +1,12 @@
+FROM gradle:7.4 as build
+
+WORKDIR /MANCALA-JAVA-ESRA
+COPY . .
+RUN gradle distTar
+
+FROM openjdk:17
+WORKDIR /app
+COPY --from=build /MANCALA-JAVA-ESRA/api/build/distributions/api.tar .
+RUN tar -xvf api.tar && rm api.tar
+
+ENTRYPOINT api/bin/api

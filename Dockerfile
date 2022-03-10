@@ -1,11 +1,8 @@
-FROM gradle:latest
+FROM node:16-alpine
 
-WORKDIR /MANCALA-JAVA-ESRA
+WORKDIR /frontend
+COPY client .
+RUN npm ci
 
-COPY . .
-
-EXPOSE 8080
-
-RUN gradle build
-
-ENTRYPOINT gradle run
+EXPOSE 3000
+ENTRYPOINT npm run start
