@@ -54,16 +54,20 @@ export function StartGame({ setGameState }: StartGameProps) {
 
     return (
         <form onSubmit={(e) => tryStartGame(e)}>
-            <input value={playerOne}
-                placeholder="Player 1 name"
-                onChange={(e) => setPlayerOne(e.target.value)}
-            />
-
-            <input value={playerTwo}
-                placeholder="Player 2 name"
-                onChange={(e) => setPlayerTwo(e.target.value)}
-            />
-
+            <div className="form__group field">
+                <input required className="form__field" name="player1" id="player1" value={playerOne}
+                    placeholder="Name Player 1"
+                    onChange={(e) => setPlayerOne(e.target.value)}
+                />
+                <label htmlFor="player1" className="form__label">Player one</label>
+            </div>
+            <div className="form__group field">
+                <input required className="form__field" name="player2" id="player2" value={playerTwo}
+                    placeholder="Name Player 2"
+                    onChange={(e) => setPlayerTwo(e.target.value)}
+                />
+                <label htmlFor="player2" className="form__label">Player two</label>
+            </div>
             <p className="errorMessage">{errorMessage}</p>
 
             <button className="startGameButton" type="submit">

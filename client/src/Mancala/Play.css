@@ -1,102 +1,151 @@
 body {
-  font-family: Helvetica;
-  font-weight: bold;
-  font-size: larger;
-  --primary-color: rgb(143, 138, 138);
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.5rem;
+    --primary-color: rgb(255, 255, 255);
 }
 
 .game {
-  display: flex;
-  width: 95%;
-  height: 100%;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    width: 95%;
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .board {
-  display: flex;
-  background-color: rgb(206, 206, 206);
-  flex-direction: row;
-  height: 40vh;
-  width: 90vw;
-  padding: 10px;
-  border-radius: 15px;
-  justify-content: center;
+    display: flex;
+    background-color: rgb(209, 218, 223);
+    flex-direction: row;
+    height: 40vh;
+    width: 90vw;
+    padding: 10px;
+    border-radius: 20px;
+    border: 10px solid rgb(117, 117, 117);
+    justify-content: center;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
+        4px 4px 0px 0px, 5px 5px 0px 0px;
 }
 
-
 .bowl {
-  font-weight: bold;
-  font-size: larger;
-  margin: 4px;
-  border-radius: 50%;
-  height: 90%;
-  flex: 1;
-  flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 4px;
+    border-radius: 50%;
+    height: 90%;
+    flex: 1;
+    flex-wrap: wrap;
+    color: #333333;
 }
 
 .bowl:hover {
-  border-color: rgb(255, 255, 255);
-  color:rgb(105, 107, 109);
+    border-color: rgb(255, 255, 255);
 }
 
 .kalaha {
-  font-weight: bold;
-  font-size: larger;
-  display: flex;
-  margin: 5px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40%;
-  flex: 1;
-  flex-wrap: wrap;
-}
-
-#kalahap1 {
-  background-color: rgb(230, 138, 102);
-}
-
-#kalahap2 {
-  background-color: rgb(77, 172, 136);
+    font-weight: bold;
+    font-size: 5rem;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45%;
+    border: 6px rgb(111, 144, 177);
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 10rem;
+    color: #333333;
 }
 
 .row-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 3;
+    display: flex;
+    flex-direction: column;
+    flex: 3;
 }
 
 .topboard {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
 }
 
-#bowlsp2 {
-  background-color: rgb(166, 247, 202);
+.namep1 {
+    font-weight: bold;
+    font-size: 3rem;
+    display: flex;
+    flex: 3;
+    background: linear-gradient(21deg, #c7c7c7, #5c85b3);
+    border-radius: 9999em;
+    padding: 5px;
+    margin: 1rem;
+}
+
+.textp1 {
+    color: rgb(78, 78, 78);
+    border-radius: 9999em;
+    background-color: rgb(255, 255, 255);
+    padding: 7px;
+}
+
+#kalahap1 {
+    background-color: #5c85b3;
+    border-color: #007dc0;
+    color: #333333;
 }
 
 #bowlsp1 {
-  background-color: rgb(255, 194, 169);
+    background-color: #bbbbbb;
+}
+
+#bowlsp1:hover {
+    color: #5c85b3;
+}
+
+.namep2 {
+    font-weight: bold;
+    font-size: 3rem;
+    display: flex;
+    flex: 3;
+    background: linear-gradient(30deg, #59ffcd, #ebebeb);
+    border-radius: 9999em;
+    padding: 5px;
+    margin: 1.5rem;
+}
+
+.textp2 {
+    color: rgb(6, 117, 161);
+    border-radius: 9999em;
+    background-color: rgb(255, 255, 255);
+    padding: 7px;
+}
+
+#kalahap2 {
+    background-color: #59ffcd;
+    border-color: #007dc0;
+}
+
+#bowlsp2 {
+    background-color: #eeeeee;
+}
+
+#bowlsp2:hover {
+    color: #59ffcd;
 }
 
 .bottomboard {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
 }
 
-
-
-
 .gamestatus {
-  width: 100%;
-  background-color: rgb(83, 162, 182);
-  font-size: larger;
-  text-align: center;
-  color: bisque;
-  margin: 8px;
-  background: rgb(65, 72, 78);
+    width: 100%;
+    background-color: rgb(83, 162, 182);
+    font-size: larger;
+    text-align: center;
+    color: bisque;
+    margin: 8px;
+    background: rgb(65, 72, 78);
 }

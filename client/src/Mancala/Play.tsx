@@ -42,13 +42,20 @@ export function Play({ gameState, setGameState }: PlayProps) {
 
   let winner = "";
   if (gameState.gameStatus.endOfGame) {
-    winner = "Winnaar: " + gameState.gameStatus.winner;
+    winner = gameState.gameStatus.winner + " has won the game!";
   }
+
+  let endGame = "";
+  if (gameState.gameStatus.endOfGame) {
+    endGame = "Game finished!"
+  }
+
+
   return (
         <div className="game">
-            <p>{player1.name}       vs      {player2.name}</p>
-            <p>End of Game: {gameState.gameStatus.endOfGame ? "ja" : "nee"}</p>
+            <p>{endGame}</p>
             <p>{winner}</p>
+            <div className="namep2"><div className="textp2">{player2.name}</div></div>
             <div className="board">
                 <div className="kalaha" id="kalahap2">{player2Kalaha.nrOfStones}</div>
                 <div className="row-wrapper">
@@ -65,7 +72,11 @@ export function Play({ gameState, setGameState }: PlayProps) {
                 </div>
                 <div className="kalaha" id="kalahap1">{player1Kalaha.nrOfStones}</div>
             </div>
+            <div className="namep1"><div className="textp1">{player1.name}</div></div>
         </div>
 
   );
+
+
+
 }
